@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.zxp.chat"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //use legacy for android 6.0
+    useLibrary 'org.apache.http.legacy'
+
+    //自3.6.0开始需要java8的支持
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -25,4 +34,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Google firebase cloud messaging
+    implementation ('com.google.android.gms:play-services-base:11.4.0') {exclude group:'com.android.support'}
+    implementation ('com.google.firebase:firebase-messaging:11.4.0') {exclude group:'com.android.support'}
+    api 'com.hyphenate:hyphenate-sdk:3.6.1'
 }
