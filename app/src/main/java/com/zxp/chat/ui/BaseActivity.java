@@ -44,7 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    protected abstract void initData();
+    protected void initData(){}
 
     /**
      *
