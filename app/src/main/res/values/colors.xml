@@ -6,4 +6,5 @@
     <color name="greenBtn">#07FC4D</color>
     <color name="whiteBtn">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="gainsboro">#DCDCDC</color>
 </resources>
