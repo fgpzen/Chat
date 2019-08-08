@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="InputItemView">
-        <attr name="inputItemIconVisibility" format="boolean"/>
-        <attr name="inputItemBottomLineColor" format="reference|color"/>
-        <attr name="inputItemTVLable" format="string"/>
-        <attr name="inputItemETHint" format="string"/>
+        <attr name="iconVisibility" format="boolean"/>
+        <attr name="lable" format="string"/>
+        <attr name="inputHint" format="string"/>
     </declare-styleable>
 </resources>

@@ -1,27 +1,29 @@
 package com.zxp.chat.widget;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zxp.chat.R;
+import com.zxp.chat.ui.Constants;
 
 public class InputItemView extends FrameLayout{
     TextView tvLable;
     EditText etText;
     ImageView ivIcon;
     View lineView;
+    int lineOnColor = Constants.Colors.GREEN;
+    int lineOffColor = Constants.Colors.GAINSBORN;
 
     public InputItemView(@NonNull Context context) {
         super(context);
@@ -35,11 +37,10 @@ public class InputItemView extends FrameLayout{
 
     private void init(Context context, AttributeSet attrs){
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.InputItemView);
-        Boolean iconVisibility = ta.getBoolean(R.styleable.InputItemView_inputItemIconVisibility, false);
+        Boolean iconVisibility = ta.getBoolean(R.styleable.InputItemView_iconVisibility, false);
         //Drawable lineDraw = ta.getDrawable(R.styleable.InputItemView_inputItemBottomLineColor);
-        int lineColor = ta.getColor(R.styleable.InputItemView_inputItemBottomLineColor,getResources().getColor(R.color.gainsboro));
-        String lable = ta.getString(R.styleable.InputItemView_inputItemTVLable);
-        String hint = ta.getString(R.styleable.InputItemView_inputItemETHint);
+        String lable = ta.getString(R.styleable.InputItemView_lable);
+        String hint = ta.getString(R.styleable.InputItemView_inputHint);
         ta.recycle();
 
         LayoutInflater.from(context).inflate(R.layout.widget_et_item, this);
@@ -52,9 +53,15 @@ public class InputItemView extends FrameLayout{
             lineView.setBackground(lineDraw);
         }*/
         ivIcon.setVisibility(iconVisibility?View.VISIBLE:View.GONE);
-        lineView.setBackgroundColor(lineColor);
         tvLable.setText(lable);
         etText.setHint(hint);
+        etText.setInputType(EditorInfo.TYPE_TEXT_VARIATION_PASSWORD);
+        etText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                lineView.setBackgroundColor(b?lineOnColor:lineOffColor);
+            }
+        });
 
     }
 
@@ -70,5 +77,7 @@ public class InputItemView extends FrameLayout{
         ivIcon.setImageBitmap(bm);
     }
 
-
+    public void setInputType(int type){
+        etText.setInputType(type);
+    }
 }

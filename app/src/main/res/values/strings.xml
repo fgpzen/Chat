@@ -4,4 +4,9 @@
     <string name="register">注册</string>
     <string name="register_phone">手机号注册</string>
     <string name="name">昵称</string>
+    <string name="name_eg">例如: 陈晨</string>
+    <string name="phone">手机号</string>
+    <string name="phone_eg">请填写手机号</string>
+    <string name="password">密码</string>
+    <string name="password_eg">填写密码</string>
 </resources>

@@ -37,5 +37,5 @@
         android:id="@+id/line"
         style="@style/LineStyle"
         android:layout_gravity="bottom"
-        android:background="@color/greenBtn"/>
+        android:background="@color/gainsboro"/>
 </FrameLayout>
