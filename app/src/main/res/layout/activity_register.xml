@@ -10,47 +10,80 @@
 
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black_24dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/register_phone"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"/>
 
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.zxp.chat.widget.InputItemView
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:lable="@string/name"
+            android:layout_height="wrap_content"
+            app:etLable="@string/nickname_lable"
             app:iconVisibility="true"
-            app:inputHint="@string/name_eg" />
+            app:inputHint="@string/nickname_eg" />
+
+        <com.zxp.chat.widget.TextItemView
+            android:id="@+id/text_nation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tvLable="@string/nation_district">
+
+        </com.zxp.chat.widget.TextItemView>
 
         <com.zxp.chat.widget.InputItemView
+            android:id="@+id/input_phone"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:lable="@string/phone"
+            android:layout_height="wrap_content"
+            app:etLable="@string/phone"
             app:inputHint="@string/phone_eg" />
 
         <com.zxp.chat.widget.InputItemView
+            android:id="@+id/input_pw"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:lable="@string/password"
-            app:iconVisibility="true"
+            android:layout_height="wrap_content"
+            app:etLable="@string/password"
             app:inputHint="@string/password_eg" />
+
+        <com.zxp.chat.widget.AgreementItemView
+            android:id="@+id/agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:agreeText="@string/read_agree"
+            android:layout_gravity="center_horizontal"
+            app:agreement="@string/agreement"/>
+
+        <com.zxp.chat.widget.ButtonView
+            style="@style/Margin10Style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:radius="2dp"
+            app:fillColorNormal="@color/green"
+            android:text="@string/register"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
     </LinearLayout>
+
+
 </LinearLayout>

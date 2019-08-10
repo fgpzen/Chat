@@ -26,7 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(provideContentView());
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         mContext = this;
         if (isRegisterEventBus()) {
             EventBusUtil.register(this);

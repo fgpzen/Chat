@@ -2,7 +2,24 @@
 <resources>
     <declare-styleable name="InputItemView">
         <attr name="iconVisibility" format="boolean"/>
-        <attr name="lable" format="string"/>
+        <attr name="etLable" format="string"/>
         <attr name="inputHint" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TextItemView">
+        <attr name="tvLable" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="AgreementItemView">
+        <attr name="agreeText" format="string"/>
+        <attr name="agreement" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ButtonView">
+        <attr name="lineColor" format="color"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="fillColorPress" format="color"/>
+        <attr name="fillColorNormal" format="color"/>
     </declare-styleable>
 </resources>

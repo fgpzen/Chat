@@ -12,7 +12,7 @@
         android:layout_margin="20dp"
         style="@style/BtnStyle"
         android:text="@string/login"
-        android:textColor="@color/whiteBtn"
+        android:textColor="@color/white"
         android:background="@drawable/btn_shape_green"
         android:layout_gravity="bottom|left"/>
 
@@ -20,7 +20,7 @@
         android:id="@+id/btn_register"
         style="@style/BtnStyle"
         android:text="@string/register"
-        android:textColor="@color/greenBtn"
+        android:textColor="@color/green"
         android:background="@drawable/btn_shape_white"
         android:layout_margin="20dp"
         android:layout_gravity="bottom|right"/>

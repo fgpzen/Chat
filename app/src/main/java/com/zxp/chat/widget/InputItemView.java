@@ -3,27 +3,26 @@ package com.zxp.chat.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zxp.chat.R;
-import com.zxp.chat.ui.Constants;
 
-public class InputItemView extends FrameLayout{
+public class InputItemView extends RelativeLayout {
     TextView tvLable;
     EditText etText;
     ImageView ivIcon;
     View lineView;
-    int lineOnColor = Constants.Colors.GREEN;
-    int lineOffColor = Constants.Colors.GAINSBORN;
+    int lineOnColor = Color.GREEN;
+    int lineOffColor = Color.LTGRAY;
 
     public InputItemView(@NonNull Context context) {
         super(context);
@@ -39,7 +38,7 @@ public class InputItemView extends FrameLayout{
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.InputItemView);
         Boolean iconVisibility = ta.getBoolean(R.styleable.InputItemView_iconVisibility, false);
         //Drawable lineDraw = ta.getDrawable(R.styleable.InputItemView_inputItemBottomLineColor);
-        String lable = ta.getString(R.styleable.InputItemView_lable);
+        String lable = ta.getString(R.styleable.InputItemView_etLable);
         String hint = ta.getString(R.styleable.InputItemView_inputHint);
         ta.recycle();
 
@@ -55,7 +54,6 @@ public class InputItemView extends FrameLayout{
         ivIcon.setVisibility(iconVisibility?View.VISIBLE:View.GONE);
         tvLable.setText(lable);
         etText.setHint(hint);
-        etText.setInputType(EditorInfo.TYPE_TEXT_VARIATION_PASSWORD);
         etText.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
@@ -75,6 +73,10 @@ public class InputItemView extends FrameLayout{
 
     public void setIconImage(Bitmap bm){
         ivIcon.setImageBitmap(bm);
+    }
+
+    public void setIconClickListener(OnClickListener listener){
+        ivIcon.setOnClickListener(listener);
     }
 
     public void setInputType(int type){
