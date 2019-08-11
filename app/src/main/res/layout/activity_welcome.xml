@@ -7,21 +7,23 @@
     android:background="@drawable/launch_bg"
     tools:context=".ui.WelcomeActivity">
 
-    <Button
+    <com.zxp.chat.widget.ButtonView
         android:id="@+id/btn_login"
-        android:layout_margin="20dp"
         style="@style/BtnStyle"
-        android:text="@string/login"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_shape_green"
-        android:layout_gravity="bottom|left"/>
+        android:layout_margin="20dp"
+        app:radius="2dp"
+        app:fillColorNormal="@color/green"
+        android:layout_gravity="bottom|left"
+        android:text="@string/login"/>
 
-    <Button
+    <com.zxp.chat.widget.ButtonView
         android:id="@+id/btn_register"
         style="@style/BtnStyle"
-        android:text="@string/register"
-        android:textColor="@color/green"
-        android:background="@drawable/btn_shape_white"
         android:layout_margin="20dp"
-        android:layout_gravity="bottom|right"/>
+        app:radius="2dp"
+        app:fillColorNormal="@color/white"
+        android:layout_gravity="bottom|right"
+        android:text="@string/register"
+        android:textColor="@color/green"/>
+
 </FrameLayout>

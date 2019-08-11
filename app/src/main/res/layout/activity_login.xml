@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.LoginActivity">
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black_24dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/register_phone"
+            android:textColor="@color/black"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="25sp"/>
+    </FrameLayout>
+
+    <com.zxp.chat.widget.TextItemView
+        android:id="@+id/text_nation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tvLable="@string/nation_district"/>
+
+    <com.zxp.chat.widget.InputItemView
+        android:id="@+id/input_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:etLable="@string/phone"
+        app:inputHint="@string/phone_eg"/>
+
+    <com.zxp.chat.widget.InputItemView
+        android:id="@+id/input_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:etLable="@string/password"
+        app:inputHint="@string/password_eg" />
+
+    <TextView
+        android:id="@+id/tv_other_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@drawable/tv_login_selector"
+        android:clickable="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/other_login"/>
+
+    <com.zxp.chat.widget.ButtonView
+        android:id="@+id/btn_login"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:radius="1dp"
+        app:fillColorNormal="@color/green"
+        app:isOpenEnable="true"
+        android:enabled="false"
+        android:text="@string/login"/>
+</LinearLayout>

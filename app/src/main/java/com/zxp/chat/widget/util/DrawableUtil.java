@@ -5,19 +5,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 
 public class DrawableUtil {
-    /**
-     * 创建Selector
-     * @param normalDraw
-     * @param pressedDraw
-     * @return
-     */
-    public static StateListDrawable getSelector(Drawable normalDraw, Drawable pressedDraw) {
-        StateListDrawable stateListDrawable = new StateListDrawable();
-        //先执行ture,在执行false; -state_selected表示false
-        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, pressedDraw);
-        stateListDrawable.addState(new int[]{}, normalDraw);
-        return stateListDrawable;
-    }
 
     /**
      * 动态设置Shape
@@ -36,5 +23,36 @@ public class DrawableUtil {
             gradientDrawable.setStroke(width, strokeColor);
         }
         return gradientDrawable;
+    }
+
+    /**
+     * 创建Selector
+     * @param normalDraw
+     * @param pressedDraw
+     * @return
+     */
+    public static StateListDrawable getPressedSelector(Drawable normalDraw, Drawable pressedDraw) {
+        StateListDrawable stateListDrawable = new StateListDrawable();
+        //先执行ture,在执行false; -state_selected表示false
+        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, pressedDraw);
+        stateListDrawable.addState(new int[]{}, normalDraw);
+        return stateListDrawable;
+    }
+
+    public static StateListDrawable getEnabledSelector(Drawable normalDraw, Drawable enabledDraw) {
+        StateListDrawable stateListDrawable = new StateListDrawable();
+        //先执行ture,在执行false; -state_selected表示false
+        stateListDrawable.addState(new int[]{android.R.attr.state_enabled}, enabledDraw);
+        stateListDrawable.addState(new int[]{}, normalDraw);
+        return stateListDrawable;
+    }
+
+    public static StateListDrawable getSelector(Drawable normalDraw, Drawable enabledDraw, Drawable pressedDraw) {
+        StateListDrawable stateListDrawable = new StateListDrawable();
+        //先执行ture,在执行false; -state_selected表示false
+        stateListDrawable.addState(new int[]{-android.R.attr.state_enabled}, enabledDraw);
+        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, pressedDraw);
+        stateListDrawable.addState(new int[]{}, normalDraw);
+        return stateListDrawable;
     }
 }

@@ -11,7 +11,7 @@ public class ChatApplication extends Application {
         super.onCreate();
         context = getApplicationContext();
 
-        EaseMobHelper.getInstance().init(context);
+        //EaseMobHelper.getInstance().init(context);
     }
 
     public static Context getContext() {

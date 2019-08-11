@@ -31,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isRegisterEventBus()) {
             EventBusUtil.register(this);
         }
+        initData();
         ActivityCollector.addActivity(this);
     }
 

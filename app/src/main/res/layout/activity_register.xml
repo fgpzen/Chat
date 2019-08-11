@@ -75,14 +75,15 @@
             app:agreement="@string/agreement"/>
 
         <com.zxp.chat.widget.ButtonView
-            style="@style/Margin10Style"
+            android:id="@+id/btn_register"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:radius="2dp"
+            app:radius="1dp"
             app:fillColorNormal="@color/green"
-            android:text="@string/register"
-            android:textSize="18sp"
-            android:textColor="@color/white"/>
+            app:isOpenEnable="true"
+            android:enabled="false"
+            android:text="@string/register"/>
     </LinearLayout>
 
 
