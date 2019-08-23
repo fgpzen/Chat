@@ -25,4 +25,10 @@
         <attr name="fillColorEnable" format="color"/>
     </declare-styleable>
 
+    <declare-styleable name="ButtonItemView">
+        <attr name="lable" format="string"/>
+        <attr name="lableColor" format="reference|color"/>
+        <attr name="iconSrc" format="reference"/>
+    </declare-styleable>
+
 </resources>
