@@ -1,12 +1,9 @@
 package com.zxp.chat.ui;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMClient;
 import com.zxp.chat.R;
 import com.zxp.chat.widget.ButtonView;
 import com.zxp.chat.widget.InputItemView;
@@ -57,7 +54,8 @@ public class LoginActivity extends BaseActivity implements InputItemView.Callbac
     void login(){
         String phone = input_phone.getInputText();
         String pw = input_pw.getInputText();
-        EMClient.getInstance().login(phone,pw,new EMCallBack() {//回调
+        startActivity(MainActivity.class);
+        /*EMClient.getInstance().login(phone,pw,new EMCallBack() {//回调
             @Override
             public void onSuccess() {
                 EMClient.getInstance().groupManager().loadAllGroups();
@@ -75,7 +73,7 @@ public class LoginActivity extends BaseActivity implements InputItemView.Callbac
             public void onError(int code, String message) {
                 Log.d("main", "登录聊天服务器失败！");
             }
-        });
+        });*/
     }
 
 

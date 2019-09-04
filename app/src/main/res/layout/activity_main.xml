@@ -17,11 +17,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/graywhite">
         <com.zxp.chat.widget.ButtonItemView
+            android:id="@+id/btn_chat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            app:lable="@string/chat">
+
+        </com.zxp.chat.widget.ButtonItemView>
+
+        <com.zxp.chat.widget.ButtonItemView
+            android:id="@+id/btn_contacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lable="@string/contacts">
+
+        </com.zxp.chat.widget.ButtonItemView>
+
+        <com.zxp.chat.widget.ButtonItemView
+            android:id="@+id/btn_discover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lable="@string/discover">
+
+        </com.zxp.chat.widget.ButtonItemView>
+
+        <com.zxp.chat.widget.ButtonItemView
+            android:id="@+id/btn_me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:lable="@string/me">
 
         </com.zxp.chat.widget.ButtonItemView>
     </LinearLayout>

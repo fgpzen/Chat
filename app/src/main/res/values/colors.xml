@@ -18,6 +18,7 @@
     <color name="transparent">#00FFFFFF</color>
 
     <color name="gainsboro">#DCDCDC</color>
+    <color name="graywhite">#f9f4f4</color>
     <color name="dimGray">#696969</color>
     <color name="deepSkyBlue">#00BFFF</color>
 </resources>
