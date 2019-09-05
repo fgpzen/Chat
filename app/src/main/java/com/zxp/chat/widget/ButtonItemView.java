@@ -45,14 +45,14 @@ public class ButtonItemView extends RelativeLayout {
 
     public void setButtonDrawable(Drawable normalDraw, Drawable pressedDraw){
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{android.R. attr.state_pressed}, pressedDraw);
+        stateListDrawable.addState(new int[]{android.R. attr.state_selected}, pressedDraw);
         stateListDrawable.addState(new int[]{}, normalDraw);
         button.setCompoundDrawablesWithIntrinsicBounds(null, stateListDrawable, null, null);
     }
 
     public void setTextColor(int normalColor, int pressedColor){
-        int[][] states = new int[][]{{android.R.attr.state_pressed}, {}};
-        int[] colors = new int[]{normalColor, pressedColor};
+        int[][] states = new int[][]{{android.R.attr.state_selected}, {}};
+        int[] colors = new int[]{pressedColor, normalColor};
         ColorStateList colorStateList = new ColorStateList(states, colors);
         button.setTextColor(colorStateList);
     }
