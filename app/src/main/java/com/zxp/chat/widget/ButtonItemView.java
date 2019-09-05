@@ -10,12 +10,12 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.zxp.chat.R;
 
-public class ButtonItemView extends RelativeLayout {
+public class ButtonItemView extends FrameLayout {
     Button button;
     TextView tvHint;
 
@@ -45,7 +45,7 @@ public class ButtonItemView extends RelativeLayout {
 
     public void setButtonDrawable(Drawable normalDraw, Drawable pressedDraw){
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{android.R. attr.state_selected}, pressedDraw);
+        stateListDrawable.addState(new int[]{android.R.attr.state_selected}, pressedDraw);
         stateListDrawable.addState(new int[]{}, normalDraw);
         button.setCompoundDrawablesWithIntrinsicBounds(null, stateListDrawable, null, null);
     }

@@ -2,8 +2,7 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:clickable="true">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_hint"
@@ -24,7 +23,6 @@
         android:layout_height="wrap_content"
         android:drawableTop="@mipmap/ic_launcher"
         android:text="@string/app_name"
-
         android:gravity="center_horizontal"/>
 
 </FrameLayout>

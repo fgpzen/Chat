@@ -10,6 +10,9 @@ import android.view.View;
 
 import com.zxp.chat.R;
 import com.zxp.chat.ui.fragment.ChatFragment;
+import com.zxp.chat.ui.fragment.ContactsFragment;
+import com.zxp.chat.ui.fragment.DiscoverFragment;
+import com.zxp.chat.ui.fragment.MeFragment;
 import com.zxp.chat.widget.ButtonItemView;
 
 import java.util.ArrayList;
@@ -58,7 +61,7 @@ public class MainActivity extends BaseActivity {
                 ContextCompat.getDrawable(this, R.drawable.discovery_press));
         btn_me.setButtonDrawable(
                 ContextCompat.getDrawable(this, R.drawable.me_normal),
-                ContextCompat.getDrawable(this, R.drawable.message_press));
+                ContextCompat.getDrawable(this, R.drawable.me_press));
         btn_chat.setTextColor(
                 ContextCompat.getColor(this, R.color.gray7),
                 ContextCompat.getColor(this, R.color.green0));
@@ -71,6 +74,7 @@ public class MainActivity extends BaseActivity {
         btn_me.setTextColor(
                 ContextCompat.getColor(this, R.color.gray7),
                 ContextCompat.getColor(this, R.color.green0));
+        btn_chat.setSelected(true);
         initializeFragment();
     }
 
@@ -91,7 +95,6 @@ public class MainActivity extends BaseActivity {
                 index = 3;
                 break;
         }
-        selectButton(index);
         selectPage(index);
         Log.d("TAG","111 : "+index);
     }
@@ -99,9 +102,9 @@ public class MainActivity extends BaseActivity {
     private void initializeFragment() {
         fragments = new ArrayList<>();
         fragments.add(new ChatFragment());
-        fragments.add(new ChatFragment());
-        fragments.add(new ChatFragment());
-        fragments.add(new ChatFragment());
+        fragments.add(new ContactsFragment());
+        fragments.add(new DiscoverFragment());
+        fragments.add(new MeFragment());
 
         buttonList = new ArrayList<>();
         buttonList.add(btn_chat);
@@ -128,7 +131,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                //selectButton(position);
+                selectButton(position);
             }
 
             @Override
@@ -149,8 +152,9 @@ public class MainActivity extends BaseActivity {
         for(int i=0; i<buttonList.size(); i++){
             if(i==index){
                 buttonList.get(index).setSelected(true);
+                Log.d("TAG","2222 : "+index);
             }else{
-                buttonList.get(index).setSelected(false);
+                buttonList.get(i).setSelected(false);
             }
         }
     }
